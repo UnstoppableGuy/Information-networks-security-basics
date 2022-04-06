@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.idea/
+# lab1 rubish
+lab1/file_caesar_0
+lab1/file_caesar_0_caesar_1
+lab1/file_vigenere_0
+lab1/file_vigenere_0_vigenere_1
+lab1/file_caesar_1
+lab1/file_caesar_1_caesar_0
+lab1/file_vigenere_1
+lab1/file_vigenere_1_vigenere_0

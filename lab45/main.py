@@ -3,6 +3,21 @@ import socket
 import json
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
+import logging
+
+# logger = logging.getLogger('logger')
+# logger.setLevel(logging.info('INFO'),logger.error('ERROR'))
+Log_Format = "%(levelname)s %(asctime)s - %(message)s"
+
+logging.basicConfig(filename = "logfile.log",
+                    filemode = "w",
+                    format = Log_Format, 
+                    level = logging.ERROR)
+
+logger = logging.getLogger()
+
+logger.error("Our First Log Message")
+
 
 conn_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_addr = ('127.0.0.1', 8888)
@@ -368,7 +383,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = AuthWindow()
     window.show()
-
     tcp_init()
 
     app.exec_()

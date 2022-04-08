@@ -1,0 +1,4 @@
+autopep8==1.6.0
+pyinstaller==4.10
+PyQt5==5.15.6
+

@@ -3,7 +3,7 @@ import socket
 import sys
 import threading
 import json
-
+import test
 conn_tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_addr = ('127.0.0.1', 8888)
 is_finished = [False]
@@ -56,7 +56,7 @@ def thread_connection(client_socket, client_addr):
 
 
 def data_menu(data: str, addr) -> str:
-    conn_sql = sqlite3.connect('newdb.db')
+    conn_sql = sqlite3.connect('new.db')
     cursor = conn_sql.cursor()
 
     try:
@@ -152,6 +152,5 @@ def get_users(cur) -> list:
 
 if __name__ == '__main__':
     t_server = threading.Thread(target=thread_tcp)
-
     t_server.start()
     t_server.join()

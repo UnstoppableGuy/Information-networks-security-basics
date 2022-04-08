@@ -1,8 +1,7 @@
 import sqlite3
 import json
 
-# server = sqllite3
-conn_sql = sqlite3.connect('newdb.db')
+conn_sql = sqlite3.connect('new.db')
 cursor = conn_sql.cursor()
 
 cursor.execute("""CREATE TABLE IF NOT EXISTS users(    
@@ -30,10 +29,9 @@ cursor.execute(" INSERT INTO users(name, password, role) VALUES('vladik', 'passw
 cursor.execute(" INSERT INTO users(name, password, role) VALUES('petya', 'password', 1)")
 cursor.execute(" INSERT INTO users(name, password, role) VALUES('omega', '1234567890', 2)")
 
-cursor.execute(" INSERT INTO posts(name, id_users, name, category, author, price, telephone) VALUES('the beginning after the end','fantasy', 'TurleMe', '120', '80291111111', '1', '2')")
-cursor.execute(" INSERT INTO posts(name, id_users, name, category, author, price, telephone) VALUES('witcher', 'fantasy', 'Анджиан Сапкойвский', '150', '+375293556787', '1', '2')")
-cursor.execute(" INSERT INTO posts(name, id_users, name, category, author, price, telephone) VALUES('TEST', 1, 'TEST', 'TEST', 'TEST', 'TEST', 'TEST')")
-
+cursor.execute(" INSERT INTO posts(name, id_users, name, category, author, price, telephone) VALUES('Ведьмак', 3, '2', 'fantasy', 'Анджиан Сапкойвский', '80', 'тeлефон')")
+cursor.execute(" INSERT INTO posts(name, id_users, name, category, author, price, telephone) VALUES('Начало после конца', 3, '12', 'fantasy', 'turtleme', '90', 'тeлефон')")
+cursor.execute(" INSERT INTO posts(name, id_users, name, category, author, price, telephone) VALUES('Война и мир', 3, '22', 'поэзия', 'Tolstoi', '75', 'тeлефон')")
 cursor.close()
 conn_sql.commit()
 conn_sql.close()
